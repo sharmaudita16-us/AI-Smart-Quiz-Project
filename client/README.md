@@ -24,5 +24,5 @@ It uses predefined question sets and returns relevant questions when a user sear
 5. Questions are displayed on screen
 
 ## 📷 Screenshot
-![Quiz App](server/screenshot.png)
+![Quiz App](screenshot.png)
 
