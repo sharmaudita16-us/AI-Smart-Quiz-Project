@@ -1,0 +1,301 @@
+/* App.css - simple modern styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+body {
+  background: linear-gradient(135deg, #eef2ff, #f0fdfa);
+}
+body {
+  background: linear-gradient(135deg, #f7f9fc, #eef2ff);
+  background-attachment: fixed;
+}
+/* ---------------- Theme variables & dark mode ---------------- */
+
+:root{
+  --bg-start: #f3f6ff;
+  --bg-end: #f0fbf9;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+}
+
+/* Dark theme overrides */
+.theme-dark {
+  --bg-start: #0b1220;
+  --bg-end: #071026;
+  --card: #0f1724;
+  --text: #e6eef8;
+  --muted: #98a2b3;
+  --primary: #8b5cf6;
+  --accent: #34d399;
+  --success: #10b981;
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+/* apply background */
+body {
+  background: linear-gradient(120deg, var(--bg-start), var(--bg-end));
+  color: var(--text);
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* smooth transitions for cards/buttons */
+.app-root, .card, .info-box, .topic-input, .btn {
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.12s ease;
+}
+
+/* card and text colors use variables */
+.card { background: var(--card); color: var(--text); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.02); }
+.info-box { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,251,0.95)); color: var(--text); }
+
+/* inputs and buttons */
+.topic-input { background: var(--card); color: var(--text); border: 1px solid rgba(15,23,42,0.06); }
+.btn.primary { background: var(--primary); color: white; }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.06); }
+
+/* muted text */
+.subtitle, .info-box p, .info-box li { color: var(--muted); }
+
+/* toggle switch */
+.toggle {
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(15,23,42,0.06), rgba(15,23,42,0.03));
+  border: 1px solid rgba(15,23,42,0.04);
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background .25s ease, transform .12s ease;
+}
+.toggle .toggle-ball {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  display: block;
+  transition: transform .25s ease, background .25s ease;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+}
+.toggle.on {
+  background: linear-gradient(90deg, rgba(139,92,246,0.18), rgba(52,211,153,0.08));
+}
+.toggle.on .toggle-ball {
+  transform: translateX(26px);
+  background: linear-gradient(90deg, #fff, #f8fafc);
+}
+
+/* ensure elements look good in dark */
+.theme-dark .info-box { background: linear-gradient(180deg, rgba(20,28,40,0.85), rgba(12,18,30,0.85)); border: 1px solid rgba(255,255,255,0.03); }
+.theme-dark .topic-input { border: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color: var(--text); }
+.theme-dark .btn.ghost { border-color: rgba(255,255,255,0.06); }
+
+/* small accessibility: focus ring */
+.topic-input:focus, .btn:focus, .chip:focus { outline: 3px solid rgba(79,70,229,0.12); outline-offset: 3px; }
+
+/* rest of your existing App.css should remain below */
+/* (keep previous styles like .two-col, .card, .option, .chip etc.) */
+
+
+
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --primary:#4f46e5; /* indigo */
+  --accent:#06b6d4; /* teal */
+  --success:#10b981;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+}
+
+*{box-sizing:border-box}
+body,html,#root{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:#0f172a}
+
+.app-root{min-height:100%;display:flex;flex-direction:column}
+
+/* hero */
+.hero{
+  background: linear-gradient(90deg, rgba(79,70,229,0.08), rgba(6,182,212,0.04));
+  padding:36px 20px;
+  border-bottom:1px solid rgba(15,23,42,0.03);
+}
+.hero-inner{max-width:1100px;margin:0 auto}
+.title{font-size:44px;margin:0 0 6px;color:#0b1220}
+.subtitle{margin:0;color:var(--muted)}
+
+/* main container */
+.container{max-width:1100px;margin:28px auto;padding:0 20px;flex:1;}
+
+/* controls */
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+.topic-input{
+  padding:12px 14px;border-radius:8px;border:1px solid #d1d5db;background:white;width:360px;font-size:16px;
+  box-shadow:var(--shadow);
+}
+.btn.primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 14px rgba(79, 70, 229, 0.6);
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+.btn.success:hover {
+  box-shadow: 0 0 14px rgba(16,185,129,0.6);
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+.btn.ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transition: 0.2s;
+}
+
+.btn-row{display:flex;gap:10px;align-items:center}
+.btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--primary);color:white;box-shadow:0 8px 20px rgba(79,70,229,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+.btn.success{background:var(--success);color:white;padding:10px 18px;border-radius:10px}
+
+/* quiz list and cards */
+.quiz-list{display:block;margin-top:6px}
+.card{
+  background:var(--card);border-radius:8px;padding:14px 18px;margin:14px 0;border:1px solid rgba(15,23,42,0.04);
+  box-shadow:var(--shadow);
+}
+.q-header{display:flex;align-items:flex-start;gap:12px}
+.q-index{font-weight:700;color:var(--primary);min-width:28px}
+.q-text{margin:0 0 8px;font-size:16px}
+.quiz-list {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.card {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* options */
+.options{display:flex;flex-direction:column;gap:6px;padding-left:6px}
+.option{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;cursor:pointer}
+.option input{width:16px;height:16px}
+.option .opt-text{color:#0f172a}
+.option:hover{background:#f3f4f6}
+.option.selected{background:linear-gradient(90deg, rgba(79,70,229,0.06), rgba(6,182,212,0.02));border-left:3px solid var(--primary);padding-left:12px}
+
+
+/* actions and result */
+.actions{display:flex;justify-content:flex-end;margin-top:8px}
+.result{margin-top:18px;padding:14px;background:linear-gradient(90deg, rgba(16,185,129,0.06), rgba(79,70,229,0.03));border-radius:8px}
+.score-badge{background:white;padding:6px 12px;border-radius:12px;box-shadow:var(--shadow);margin-left:8px}
+
+/* footer */
+.footer{max-width:1100px;margin:34px auto 40px;padding:0 20px;color:var(--muted);text-align:center;font-size:13px}
+
+/* responsive */
+@media (max-width:720px){
+  .topic-input{width:100%}
+  .title{font-size:32px}
+  .btn.primary{padding:10px 12px}
+  .card{padding:12px}
+}
+/* BACKGROUND: soft gradient for whole page */
+body {
+  background: linear-gradient(120deg, #f3f6ff 0%, #f0fbf9 50%, #fbfbfc 100%);
+}
+
+/* ILLUSTRATION WRAP (right side) */
+.illustration-wrap {
+  position: relative;
+  height: 180px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* floating soft orbs */
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.9;
+  transform: translateZ(0);
+}
+.orb-1 {
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.18), rgba(14,165,233,0.12));
+  left: -10px;
+  top: 8px;
+  animation: float1 6s ease-in-out infinite;
+}
+.orb-2 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.14), rgba(99,102,241,0.09));
+  right: 6px;
+  bottom: 6px;
+  animation: float2 5.5s ease-in-out infinite;
+}
+
+/* emoji/robot center */
+.robot {
+  font-size: 44px;
+  z-index: 2;
+  transform-origin: center;
+  animation: bob 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 18px rgba(15,23,42,0.06));
+}
+
+/* keyframes */
+@keyframes float1 {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-12px) translateX(6px) scale(1.03); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+@keyframes float2 {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-8px) translateX(-6px) scale(1.02); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+@keyframes bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px) rotate(-2deg); }
+  100% { transform: translateY(0); }
+}
+
+/* make the right .info-box background a little translucent */
+.info-box {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,251,0.95));
+  border: 1px solid rgba(15,23,42,0.03);
+}
+
+/* Card pop + fade */
+.card { transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(15,23,42,0.08); }
+
+/* Button glow */
+.btn.primary {
+  transition: box-shadow .18s ease, transform .12s ease;
+}
+.btn.primary:hover { box-shadow: 0 10px 30px rgba(99,102,241,0.22); transform: translateY(-3px); }
+
+/* subtle fade-in for quiz list */
+.quiz-list { animation: fadeIn 0.28s ease; }
+@keyframes fadeIn { from {opacity:0; transform: translateY(6px);} to {opacity:1; transform:none;} }
+
