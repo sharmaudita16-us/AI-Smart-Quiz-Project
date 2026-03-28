@@ -24,5 +24,5 @@ It uses predefined question sets and returns relevant questions when a user sear
 5. Questions are displayed on screen
 
 ## 📷 Screenshot
-![Quiz App](../screenshot.png)
+![Quiz App](https://raw.githubusercontent.com/sharmaudita16-us/AI-Smart-Quiz-Project/main/screenshot.png)
 
